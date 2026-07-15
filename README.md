@@ -20,16 +20,16 @@ Master JPA using Hibernate as the implementation. Learn the basics of JPA - enti
 
 The Java Persistence API provides Java developers with an api for mapping java objects to relational data. In this course, you will learn about the JPA API, JPQL (Java Persistence query language), Java Persistence Criteria API and how you can perform ORM (Object Relational Mapping) with JPA. 
 
-Hibernate is the most popular implementation of JPA. It was the most popular ORM framework option before JPA emerged and it provides additional features on top of JPA. We will use Hibernate as the implementation in this course.
+Hibernate is the most popular implementation of JPA. It was the most popular ORM framework option before JPA emerged, and it provides additional features on top of JPA. We will use Hibernate as the implementation in this course.
 
 ### What You will learn
 
 - You will learn the basics of JPA and Hibernate - Entities, Relationships, Inheritance Mappings and Annotations
 - You will understand approaches to querying data using JPA and Hibernate - JPQL, Criteria API and Native Queries
-- You will understand JPA and Hibernate Relationships in depth - One to One, Many to One and Many to Many
-- You will use a variety of Spring Boot Starters - Spring Boot Starter Web, Starter Data Jpa, Starter Test
-- You will learn the basic of performance tuning your JPA application with Hibernate - Solve N+1 Queries Issue. 
-- You will learn the basics of caching - First Level Cache and Second Level Cache with EhCache
+- You will understand JPA and Hibernate Relationships in depth – One to One, Many to One and Many to Many
+- You will use a variety of Spring Boot Starters – Spring Boot Starter Web, Starter Data Jpa, Starter Test
+- You will learn the basics of performance tuning your JPA application with Hibernate - Solve N+1 Queries Issue. 
+- You will learn the basics of caching – First Level Cache and Second Level Cache with EhCache
 - You will understand the basics of Spring Data JPA and Spring Data REST
 
 ### Requirements
@@ -37,7 +37,7 @@ Hibernate is the most popular implementation of JPA. It was the most popular ORM
 - We will help you install Eclipse and get up and running with Maven and Tomcat.
 
 ### Step Wise Details
-Refer each section
+Refer to each section
 
 
 ## Connecting to My SQL and Other Databases
@@ -50,8 +50,9 @@ Spring Boot makes it easy to switch databases! Yeah really simple.
 - Add MySQL (or your database) dependency to pom.xml
 ```xml
 <dependency>
-    <groupId>mysql</groupId>
-    <artifactId>mysql-connector-java</artifactId>
+    <groupId>com.mysql</groupId>
+    <artifactId>mysql-connector-j</artifactId>
+    <scope>runtime</scope>
 </dependency>
 ```
 - Configure application.properties
@@ -65,18 +66,18 @@ spring.datasource.password=YOUR_PASSWORD
 
 - Restart the app and You are ready!
 
-> Spring Boot can setup the database for you using Hibernate
+> Spring Boot can set up the database for you using Hibernate
 
 Things to note:
 - Spring Boot chooses a default value for you based on whether it thinks your database is embedded (default create-drop) or not (default none).
 - ```spring.jpa.hibernate.ddl-auto``` is the setting to perform SchemaManagementTool actions automatically
-   - none : No action will be performed.
-   - create-only : Database creation will be generated.
-   - drop : Database dropping will be generated.
-   - create : Database dropping will be generated followed by database creation.
-   - validate : Validate the database schema
-   - update : Update the database schema
-- Reference : https://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#configurations-hbmddl
+   - none: No action will be performed.
+   - create-only: Database creation will be generated.
+   - drop: Database dropping will be generated.
+   - create: Database dropping will be generated followed by database creation.
+   - validate: Validate the database schema
+   - update: Update the database schema
+- Reference: https://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#configurations-hbmddl
 
 
 application.properties
@@ -90,9 +91,9 @@ spring.jpa.hibernate.ddl-auto=create
 - Install MySQL https://dev.mysql.com/doc/en/installing.html
   - More details - http://www.mysqltutorial.org/install-mysql/
   - Trouble Shooting - https://dev.mysql.com/doc/refman/en/problems.html
-- Startup the Server (as a service)
-- Go to command prompt (or terminal)
-   - Execute following commands to create a database and a user
+- Start up the Server (as a service)
+- Go to the command prompt (or terminal)
+   - Execute the following commands to create a database and a user
 
 ```
 mysql --user=user_name --password db_name
@@ -101,7 +102,7 @@ create user 'personuser'@'localhost' identified by 'YOUR_PASSWORD';
 grant all on person_example.* to 'personuser'@'localhost';
 ```
 
-- Execute following sql queries to create the table and insert the data
+- Execute the following SQL queries to create the table and insert the data
 
 ### JDBC TO JPA
 Table
@@ -237,8 +238,6 @@ insert into student_course(student_id,course_id)
 values(20001,10003);
 ```
 
-
-
 ## Installing Tools
 - Installation Video : https://www.youtube.com/playlist?list=PLBBog2r6uMCSmMVTW_QmDLyASBvovyAO3
 - GIT Repository For Installation : https://github.com/in28minutes/getting-started-in-5-steps
@@ -247,22 +246,22 @@ values(20001,10003);
 ## Running Examples
 - Download the zip or clone the Git repository.
 - Unzip the zip file (if you downloaded one)
-- Open Command Prompt and Change directory (cd) to folder containing pom.xml
+- Open Command Prompt and Change directory (cd) to the folder containing pom.xml
 - Open Eclipse 
-   - File -> Import -> Existing Maven Project -> Navigate to the folder where you unzipped the zip
+   - File → Import → Existing Maven Project → Navigate to the folder where you unzipped the zip
    - Select the right project
 - Choose the Spring Boot Application file (search for @SpringBootApplication)
-- Right Click on the file and Run as Java Application
+- Right-Click on the file and Run as Java Application
 - You are all Set
-- For help : use our installation guide - https://www.youtube.com/playlist?list=PLBBog2r6uMCSmMVTW_QmDLyASBvovyAO3
+- For help: use our installation guide – https://www.youtube.com/playlist?list=PLBBog2r6uMCSmMVTW_QmDLyASBvovyAO3
 
 ### Troubleshooting
 - Refer our TroubleShooting Guide - https://github.com/in28minutes/in28minutes-initiatives/tree/master/The-in28Minutes-TroubleshootingGuide-And-FAQ
 
-## Youtube Playlists - 500+ Videos
+## YouTube Playlists - 500+ Videos
 
 [Click here - 30+ Playlists with 500+ Videos on Spring, Spring Boot, REST, Microservices and the Cloud](https://www.youtube.com/user/rithustutorials/playlists?view=1&sort=lad&flow=list)
 
 ## Keep Learning in28Minutes
 
-in28Minutes is creating amazing solutions for you to learn Spring Boot, Full Stack and the Cloud - Docker, Kubernetes, AWS, React, Angular etc. - [Check out all our courses here](https://github.com/in28minutes/learn)
+in28Minutes is creating amazing solutions for you to learn Spring Boot, Full Stack and the Cloud – Docker, Kubernetes, AWS, React, Angular, etc. - [Check out all our courses here](https://github.com/in28minutes/learn)
