@@ -117,7 +117,7 @@ Master JPA using Hibernate as the implementation. Learn the basics of JPA - enti
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>4.0.0</version>
+		<version>4.1.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -125,8 +125,8 @@ Master JPA using Hibernate as the implementation. Learn the basics of JPA - enti
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>25</java.version>
-        <hibernate-jcache.version>7.1.11.Final</hibernate-jcache.version>
-        <ehcache.version>3.11.1</ehcache.version>
+        <hibernate-jcache.version>7.4.5.Final</hibernate-jcache.version>
+        <ehcache.version>3.12.0</ehcache.version>
 	</properties>
 
 	<dependencies>
@@ -151,7 +151,7 @@ Master JPA using Hibernate as the implementation. Learn the basics of JPA - enti
         </dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter-webmvc</artifactId>
 		</dependency>
 
 		<dependency>
@@ -176,10 +176,7 @@ Master JPA using Hibernate as the implementation. Learn the basics of JPA - enti
 			</plugin>
 		</plugins>
 	</build>
-
-	
-
-
+    
 </project>
 ```
 ---
